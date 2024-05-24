@@ -1,0 +1,28 @@
+{
+  "name": "customtodo",
+  "version": "1.0.0",
+  "description": "This app is a simple yet powerful todo app , It has a custom backend written in JS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Adarsh Kumar Singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
+  },
+  "keywords": [
+    "javascript",
+    "express",
+    "mongoose",
+    "todo",
+    "backend",
+    "nodejs",
+    "nodemon"
+  ]
+  ,
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

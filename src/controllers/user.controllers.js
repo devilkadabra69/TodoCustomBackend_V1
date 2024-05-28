@@ -86,7 +86,12 @@ const loginUser = asyncHandler(async (req, res) => {
     -> send cookies
     
     */
+    console.log(req.body);
     const { userName, email, password } = req.body;
+
+    console.log("userName:", userName);
+    console.log("email:", email);
+    console.log("password:", password);
 
     if (!(userName || email)) {
         throw new ApiError("userName or email is required :: LINE 69 user.controllers.js", 400);
@@ -122,7 +127,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 const logOut = asyncHandler(async (req, res) => {
     const user = req.user;
-    if (!user) return new ApiError("User Not Found :: LINE 125 user.controllers.js", 404)
+    if (!user) return new ApiError("User Not Found :: LINE 130 user.controllers.js", 404)
     const id = user._id;
     await User.findByIdAndUpdate(id, { $set: { refreshToken: "" } }, { new: true });
     return res.status(200).clearCookie("accessToken", "", COOKIE_OPTIONS).clearCookie("refreshToken", "", COOKIE_OPTIONS)

@@ -1,11 +1,11 @@
-import { ApiError } from "../utils/ApiError";
-import { asyncHandler } from "../utils/asyncHandler"
+import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.js"
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.models.js";
 export const verifyJwt = asyncHandler(async (req, res, next) => {
     try {
-        const incomingAccessToken = req.cookies?.accessToken || req.header('Authorization').replace('Bearer ', '');
-        const incomingAccessToken_2 = req.header('authorization').replace('Bearer ', '') || req.cookies?.accessToken;
+        const incomingAccessToken = req.cookies?.accessToken || req.header('Authorization')?.replace('Bearer ', '');
+        const incomingAccessToken_2 = req.header('authorization')?.replace('Bearer ', '') || req.cookies?.accessToken;
         console.log("incoming access token with authorization ", incomingAccessToken_2);
         console.log("incoming access token with Authorization ", incomingAccessToken);
         if (!(incomingAccessToken || incomingAccessToken_2)) return new ApiError('Unauthorized ACCESS TOKEN :: LINE 9 FROM auth.middlewares.js\n', 401)

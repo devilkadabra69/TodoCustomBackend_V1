@@ -1,6 +1,6 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors';
-import { LIMIT_16KB } from './constants';
+import { LIMIT_16KB } from './constants.js';
 import cookieParser from 'cookie-parser';
 
 const app = express();
@@ -18,5 +18,15 @@ app.use(urlencoded({
     limit: LIMIT_16KB
 }))
 app.use(cookieParser())
+
+
+//routes import
+
+import { router } from './routes/user.routes.js';
+
+//routes declarations
+app.use("/api/v1/users", router)
+
+// https://localhost/api/v1/users/register
 
 export { app };

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
-import { SALT_ROUNDS } from "../constants";
+import { SALT_ROUNDS } from "../constants.js";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema(

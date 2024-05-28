@@ -46,7 +46,7 @@ const userSchema = new Schema(
         todos: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Todo"
+                ref: "Todo",
             }
         ],
         folders: [

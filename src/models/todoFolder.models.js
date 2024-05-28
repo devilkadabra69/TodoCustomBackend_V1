@@ -8,7 +8,7 @@ const todoFolderSchema = mongoose.Schema({
     },
     folderColor: {
         type: String,
-        default: "#FFFFFF"
+        default: "#e5e5e5"
     },
     todos: [
         {

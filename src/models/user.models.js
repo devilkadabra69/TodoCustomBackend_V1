@@ -42,7 +42,19 @@ const userSchema = new Schema(
         },
         refreshToken: {
             type: String
-        }
+        },
+        todos: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Todo"
+            }
+        ],
+        folders: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "TodoFolder"
+            }
+        ]
     }, {
     timestamps: true
 }

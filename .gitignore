@@ -141,4 +141,7 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+# inspiration folder
+Inspiration/
+
 # End of https://www.toptal.com/developers/gitignore/api/node
